@@ -6,14 +6,14 @@ using System.Web.Http;
 
 namespace Facade.Controllers
 {
-    [RoutePrefix("api/Persons")]
-    public class PersonsController : ApiController
+    [RoutePrefix("api/AutoRest/Persons")]
+    public class PersonsAutoRestController : ApiController
     {
         [Route("")]
         [HttpGet]
         public IEnumerable<Person> GetMany()
         {
-            using (var handler = new PersonsHandler())
+            using (var handler = new PersonsAutoRestHandler())
             {
                 var persons = handler.GetMany();
                 return persons;
@@ -24,7 +24,7 @@ namespace Facade.Controllers
         [HttpGet]
         public Person GetById(string id)
         {
-            using (var handler = new PersonsHandler())
+            using (var handler = new PersonsAutoRestHandler())
             {
                 var person = handler.GetById(id);
                 if (person == null)
