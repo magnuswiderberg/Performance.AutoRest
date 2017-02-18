@@ -130,7 +130,6 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Business\PersonsHandler.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Global.asax.cs">
