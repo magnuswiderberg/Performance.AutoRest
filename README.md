@@ -1,10 +1,20 @@
 # Performance.AutoRest
 Shows how autorest is bad for performance
 
+## Summary
+
+### 2 Threads for 10 seconds
+* AutoRest: Total Requests: 487, **Failed: 257**
+* Static HTTPCLIENT: Total Requests: 486, **Failed: 0**
+
+### 10 Threads for 10 seconds
+* AutoRest: Total Requests: 3182, **Failed: 3182**
+* Static HTTPCLIENT: Total Requests: 2321, **Failed: 0**
+
 ## AUTOREST
 <pre>
 Threads: 2, Total Time: 10,00 secs  Req/Sec: 48,70 
-Total Requests: 487, Failed: 257 
+Total Requests: 487, Failed: 257
 Avg Time: 42,36 ms, Min Time: 28,00 ms, Max Time: 87,00 ms 
 
 Threads: 2, Total Time: 20,00 secs, Req/Sec: 56,00 
