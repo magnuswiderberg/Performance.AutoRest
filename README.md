@@ -2,6 +2,8 @@
 Shows how autorest is bad for performance
 
 ## Summary
+Test setup with Service web calling Facade web which in turn called Api web.
+All deployed on a very weak machine in Azure.
 
 ### 2 Threads for 10 seconds
 * AutoRest: Total Requests: 487, **Failed: 257**
