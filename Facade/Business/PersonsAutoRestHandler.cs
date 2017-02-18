@@ -28,7 +28,8 @@ namespace Facade.Business
 
         private static ApiClient CreateApiClient()
         {
-            var client = new ApiClient(new Uri(ConfigurationManager.AppSettings["ApiBaseUrl"]), null);
+            var credentials = new BasicAuthenticationCredentials();
+            var client = new ApiClient(new Uri(ConfigurationManager.AppSettings["ApiBaseUrl"]), credentials);
             return client;
         }
 

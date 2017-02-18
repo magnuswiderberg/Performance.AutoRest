@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Rest;
 
 namespace Services.Business
 {
@@ -26,7 +27,8 @@ namespace Services.Business
 
         private static FacadeClient CreateApiClient()
         {
-            var client = new FacadeClient(new Uri(ConfigurationManager.AppSettings["FacadeBaseUrl"]), null);
+            var credentials = new BasicAuthenticationCredentials();
+            var client = new FacadeClient(new Uri(ConfigurationManager.AppSettings["FacadeBaseUrl"]), credentials);
             return client;
         }
 
