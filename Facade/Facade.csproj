@@ -136,6 +136,8 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AutoRestClientsOverride\ApiClient.cs" />
+    <Compile Include="AutoRestClientsOverride\ApiClientPersons.cs" />
     <Compile Include="AutoRestClients\Api\ApiClient.cs" />
     <Compile Include="AutoRestClients\Api\DefaultModel.cs" />
     <Compile Include="AutoRestClients\Api\DefaultModelExtensions.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Business\PersonsHttpClientHandler.cs" />
     <Compile Include="Business\PersonsAutoRestHandler.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\PersonsHttpClientController.cs" />
     <Compile Include="Controllers\PersonsAutoRestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -175,6 +178,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utillities\Utillities.csproj">
+      <Project>{D7C1D26B-5BD0-4952-904A-12028177DE78}</Project>
+      <Name>Utillities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

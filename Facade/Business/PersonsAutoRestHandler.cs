@@ -5,30 +5,30 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Facade.Business
 {
     internal class PersonsAutoRestHandler : IPersonsHandler, IDisposable
     {
 
-        public Person GetById(string id)
+        public async Task<Person> GetByIdAsync(string id)
         {
-            var result = GetMany();
-            var person = result.Where(x => x.Id == id).FirstOrDefault();
+            var result = await GetManyAsync();
+            var person = result.FirstOrDefault(x => x.Id == id);
             return person;
         }
 
-        public IEnumerable<Person> GetMany()
+        public async Task<IEnumerable<Person>> GetManyAsync()
         {
-            var result = CreateApiClient().Persons.GetMany();
-            var converted = result.Select(x => Person.From(x)).ToArray();
+            var result = await CreateApiClient().Persons.GetManyAsync();
+            var converted = result.Select(Person.From).ToArray();
             return converted;
         }
 
         private static ApiClient CreateApiClient()
         {
-            var credentials = new BasicAuthenticationCredentials();
-            var client = new ApiClient(new Uri(ConfigurationManager.AppSettings["ApiBaseUrl"]), credentials);
+            var client = new ApiClient(new Uri(ConfigurationManager.AppSettings["ApiBaseUrl"]), null);
             return client;
         }
 

@@ -1,11 +1,12 @@
 ﻿using Facade.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Facade.Business
 {
     public interface IPersonsHandler
     {
-        Person GetById(string id);
-        IEnumerable<Person> GetMany();
+        Task<Person> GetByIdAsync(string id);
+        Task<IEnumerable<Person>> GetManyAsync();
     }
 }
