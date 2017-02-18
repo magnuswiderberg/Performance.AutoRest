@@ -14,6 +14,5 @@ namespace Facade.AutoRestClientsOverride
 
         public IPersons Persons { get; }
 
-        public IDefaultModel DefaultModel { get { throw new NotImplementedException(); } }
     }
 }

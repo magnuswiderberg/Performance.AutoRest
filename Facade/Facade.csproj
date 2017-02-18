@@ -139,10 +139,7 @@
     <Compile Include="AutoRestClientsOverride\ApiClient.cs" />
     <Compile Include="AutoRestClientsOverride\ApiClientPersons.cs" />
     <Compile Include="AutoRestClients\Api\ApiClient.cs" />
-    <Compile Include="AutoRestClients\Api\DefaultModel.cs" />
-    <Compile Include="AutoRestClients\Api\DefaultModelExtensions.cs" />
     <Compile Include="AutoRestClients\Api\IApiClient.cs" />
-    <Compile Include="AutoRestClients\Api\IDefaultModel.cs" />
     <Compile Include="AutoRestClients\Api\IPersons.cs" />
     <Compile Include="AutoRestClients\Api\Models\Person.cs" />
     <Compile Include="AutoRestClients\Api\Persons.cs" />

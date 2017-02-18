@@ -30,11 +30,6 @@ namespace Facade.AutoRestClients.Api
         public Microsoft.Rest.ServiceClientCredentials Credentials { get; private set; }
 
         /// <summary>
-        /// Gets the IDefaultModel.
-        /// </summary>
-        public virtual IDefaultModel DefaultModel { get; private set; }
-
-        /// <summary>
         /// Gets the IPersons.
         /// </summary>
         public virtual IPersons Persons { get; private set; }
@@ -240,7 +235,6 @@ namespace Facade.AutoRestClients.Api
         /// </summary>
         private void Initialize()
         {
-            this.DefaultModel = new DefaultModel(this);
             this.Persons = new Persons(this);
             this.BaseUri = new System.Uri("http://localhost/Performance.AutoRest.Api");
             SerializationSettings = new Newtonsoft.Json.JsonSerializerSettings

@@ -33,11 +33,6 @@ namespace Facade.AutoRestClients.Api
 
 
         /// <summary>
-        /// Gets the IDefaultModel.
-        /// </summary>
-        IDefaultModel DefaultModel { get; }
-
-        /// <summary>
         /// Gets the IPersons.
         /// </summary>
         IPersons Persons { get; }
