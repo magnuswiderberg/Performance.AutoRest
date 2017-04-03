@@ -1,4 +1,6 @@
-﻿namespace Facade.Models
+﻿using RCM = Facade.ModelsFromEditorSwaggerIo;
+
+namespace Facade.Models
 {
     public class Person
     {
@@ -8,6 +10,17 @@
         public string Id { get; set; }
 
         internal static Person From(AutoRestClients.Api.Models.Person source)
+        {
+            var person = new Person
+            {
+                Id = source.Id,
+                FirstName = source.GivenName,
+                LastName = source.SurName,
+                Email = source.Email
+            };
+            return person;
+        }
+        internal static Person From(RCM.Person source)
         {
             var person = new Person
             {

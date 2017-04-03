@@ -145,13 +145,16 @@
     <Compile Include="AutoRestClients\Api\Persons.cs" />
     <Compile Include="AutoRestClients\Api\PersonsExtensions.cs" />
     <Compile Include="Business\IPersonsHandler.cs" />
+    <Compile Include="Business\PersonsRestClientHandler.cs" />
     <Compile Include="Business\PersonsHttpClientHandler.cs" />
     <Compile Include="Business\PersonsAutoRestHandler.cs" />
+    <Compile Include="Controllers\PersonsRestClientController.cs" />
     <Compile Include="Controllers\PersonsHttpClientController.cs" />
     <Compile Include="Controllers\PersonsAutoRestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ModelsFromEditorSwaggerIo\Person.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,6 +165,7 @@
     </Content>
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="AutoRestClients\GenerateRestClients.cmd" />
+    <None Include="Properties\PublishProfiles\mw-performance-facade - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -176,6 +180,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RestClient\RestClient.csproj">
+      <Project>{561eb1ab-1507-46a5-8f4b-018574f419dd}</Project>
+      <Name>RestClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utillities\Utillities.csproj">
       <Project>{D7C1D26B-5BD0-4952-904A-12028177DE78}</Project>
       <Name>Utillities</Name>
